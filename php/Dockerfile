@@ -23,4 +23,9 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf \
 \
     &&  pecl install apcu && docker-php-ext-enable apcu
 
+FROM  confluent/postgres-bw:0.1
+
+RUN ["apt-get", "update"]
+RUN ["apt-get", "install", "-y", "vim"]
+
 WORKDIR /var/www/
